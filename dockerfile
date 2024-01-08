@@ -1,5 +1,5 @@
 # Use Node.js version 18 as the base image
-FROM node:18
+FROM node:16-slim
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -38,11 +38,10 @@ COPY smoke.sh /usr/src/app/
 # Make the script executable
 RUN chmod +x smoke.sh
 
+RUN /usr/src/app/smoke.sh
+
 # Set the command to run the application launches both fe and be
 CMD ["npm", "run", "dev"]
 
 # Expose port 3000
 EXPOSE 3000
-
-# Run the smoke test script when the container starts
-ENTRYPOINT ["/app/smoke.sh"]

@@ -19,6 +19,9 @@ Run `npm run dev` for a dev server. Navigate to `http://localhost:4200/`. The ap
 ## Running the multiple container app
 Run `docker-compose up` to simultaneously launch FE BE and Mongo db, make sure docker engine is running before executing the command
 
+## Check similarity of JSONSchema defination 
+Use the .bson file in the examples folder to create a collection. Simmply generate the schema defination using the app  and download the file. Use the checksimilar.py script to compare the schema definitions.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
