@@ -8,3 +8,14 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=mongoadmin
       - MONGO_INITDB_ROOT_PASSWORD=secret
     image: mongo
+  angular-app:
+    container_name: angular-app
+    ports:
+      - '4200:3000'
+    depends_on:
+      - mongo
+    build:
+      context: .
+      dockerfile: dockerfile
+    environment:
+      - MONGODB_URI=mongodb://mongoadmin:secret@mongo:27017/jsonschemadiscovery?authSource=admin

@@ -16,6 +16,9 @@ After clone the repo to your local machine, in project's folder:
 
 Run `npm run dev` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Running the multiple container app
+Run `docker-compose up` to simultaneously launch FE BE and Mongo db, make sure docker engine is running before executing the command
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
