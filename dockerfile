@@ -32,8 +32,17 @@ COPY . .
 # Build the Angular application
 RUN ["npm", "run", "build"]
 
+# Copy the smoke test script
+COPY smoke.sh /usr/src/app/
+
+# Make the script executable
+RUN chmod +x smoke.sh
+
 # Set the command to run the application launches both fe and be
 CMD ["npm", "run", "dev"]
 
 # Expose port 3000
 EXPOSE 3000
+
+# Run the smoke test script when the container starts
+ENTRYPOINT ["/app/smoke.sh"]
